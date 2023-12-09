@@ -35,7 +35,7 @@ function NavPanel() {
           <li>
             <ul className="header__links">
               <li>
-                <NavLink className="header__link">
+                <NavLink to="*" className="header__link">
                   Вход
                 </NavLink>
               </li>

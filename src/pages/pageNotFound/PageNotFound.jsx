@@ -12,20 +12,23 @@ function PageNotFound(props) {
         <NavPanel />
       </header>
       <main>
-        <section className="main__text">
+        <section className="notFound__mainText">
           <p className="text__section">Ой!</p>
           <p className="text__section">404</p>
         </section>
-        <figure className="main__content">
-          <img src={backgroundImage} alt="girl" className="main__image" />
-          <div className="main__textBlock">
-            <figcaption className="main__description">Такой страницы тут нет</figcaption>
-            <button className="main__backButton"
+        <figure className="notFound__content">
+          <img src={backgroundImage} alt="girl" className="notFound__image" />
+          <div className="notFound__textBlock">
+            <figcaption className="notFound__description">Такой страницы тут нет</figcaption>
+            <button className="notFound__backButton"
               onClick={props.handleGoBack}
             >Вернуться обратно</button>
           </div>
         </figure>
       </main>
+      <footer>
+
+      </footer>
 
     </>
   );
