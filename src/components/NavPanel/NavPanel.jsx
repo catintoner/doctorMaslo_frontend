@@ -20,11 +20,11 @@ function NavPanel() {
                   О нас
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/" className="header__link">
                   Акции
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/" className="header__link">
                   Контакты
@@ -32,7 +32,7 @@ function NavPanel() {
               </li>
             </ul>
           </li>
-          <li>
+          {/* <li>
             <ul className="header__links">
               <li>
                 <NavLink to="*" className="header__link">
@@ -45,7 +45,7 @@ function NavPanel() {
                 </NavLink>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li>
             <Link to="/" className="header__link header__logo"></Link>
           </li>

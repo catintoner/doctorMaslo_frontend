@@ -17,6 +17,8 @@
   text-decoration: none;
   color: #888;
   transition: .2s;
+  margin-right: 20px;
+  font-size: 30px;
 }
 
 .header__link:hover {
@@ -24,6 +26,7 @@
 }
 
 .header__logo {
+  margin: 0;
   display: block;
   width: 400px;
   height: 96px;

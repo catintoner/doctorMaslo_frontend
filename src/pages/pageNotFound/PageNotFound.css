@@ -52,7 +52,6 @@
   width: fit-content;
   background-color: inherit;
   font-size: 40px;
-  border-bottom: 1px solid #888;
   color: #888;
   transition: .2s;
 }
