@@ -13,6 +13,21 @@
 
 }
 
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.header__contactsData {
+  margin: 0;
+  padding: 0;
+  color: #666666;
+  font-size: 40px;
+}
+
 .header__link {
   text-decoration: none;
   color: #888;

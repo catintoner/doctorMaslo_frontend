@@ -32,6 +32,10 @@ function NavPanel() {
               </li>
             </ul>
           </li>
+          <div className="header__links header__contacts">
+            <p className="header__contactsData">green31@mail.ru</p>
+            <p className="header__contactsData">8(999)123-45-67</p>
+          </div>
           {/* <li>
             <ul className="header__links">
               <li>

@@ -3,13 +3,17 @@ import React from "react";
 import './MainPage.css';
 
 import NavPanel from "../../components/NavPanel/NavPanel";
-import Header from "../../components/Header/Header";
 
 function MainPage() {
   return (
     <>
-      <NavPanel />
-      <Header />
+      <header>
+        <NavPanel />
+      </header>
+      <main>
+        <section className="main__firstTitle"></section>
+      </main>
+      {/* <Header /> */}
     </>
   );
 }
