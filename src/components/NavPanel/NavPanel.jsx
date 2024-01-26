@@ -9,6 +9,9 @@ function NavPanel() {
       <nav className="header__navigation">
         <ul className="header__links nav__panel">
           <li>
+            <Link to="/" className="header__link header__logo"></Link>
+          </li>
+          <li>
             <ul className="header__links navigation__bar">
               <li>
                 <NavLink to="/" className="header__link">
@@ -50,9 +53,7 @@ function NavPanel() {
               </li>
             </ul>
           </li> */}
-          <li>
-            <Link to="/" className="header__link header__logo"></Link>
-          </li>
+
         </ul>
 
       </nav>

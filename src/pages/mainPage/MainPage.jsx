@@ -5,11 +5,14 @@ import "./MainPage.css";
 import NavPanel from "../../components/NavPanel/NavPanel";
 import Card from "../../components/Card/Card";
 
+import mainHeaderImage from "../../images/header__,mainImage.jpg";
+
 function MainPage() {
   return (
     <>
       <header>
         <NavPanel />
+        <img className="header__mainImage" src={mainHeaderImage}/>
       </header>
       <main>
         <section className="main__productsBlock">

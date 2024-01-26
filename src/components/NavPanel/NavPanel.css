@@ -1,7 +1,10 @@
 .header__navigation {
   width: 100%;
   background-color: #f7f7f9;
-  padding: 15px 0;
+  padding: 15px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__links {
@@ -45,7 +48,7 @@
   display: block;
   width: 400px;
   height: 96px;
-  background-image: url("../../images/header__logo_700.svg");
+  background-image: url("../../images/header__logoGreenLight.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,6 +57,6 @@
 .nav__panel {
   display: flex;
   justify-content: space-between;
-  max-width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 2%;
 }

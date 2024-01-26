@@ -1,8 +1,12 @@
+.header__mainImage {
+  max-width: 100%;
+}
+
+
 .main__productsBlock {
   background-image: url('../../images/header__background.png');
   background-color: white;
   background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
