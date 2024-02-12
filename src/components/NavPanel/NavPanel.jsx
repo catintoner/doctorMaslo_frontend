@@ -3,22 +3,26 @@ import React from "react";
 import './NavPanel.css';
 import { NavLink, Link } from "react-router-dom";
 
+import headerLogo from "../../images/header__logoGreenLight.svg";
+
 function NavPanel() {
   return (
     <>
       <nav className="header__navigation">
-        <ul className="header__links nav__panel">
-          <li>
-            <Link to="/" className="header__link header__logo"></Link>
+        <ul className="nav__panel">
+          <li className="nav__logo">
+            <Link to="/" className="header__link">
+              <img src={headerLogo} alt="Фура с надписью Зеленый свет" className="nav__picture"/>
+            </Link>
           </li>
-          <li>
+          <li className="nav__links">
             <ul className="header__links navigation__bar">
-              <li>
+              <li className="header__links_item">
                 <NavLink to="/" className="header__link">
                   Главная
                 </NavLink>
               </li>
-              <li>
+              <li className="header__links_item">
                 <NavLink to="/" className="header__link">
                   О нас
                 </NavLink>
@@ -28,17 +32,17 @@ function NavPanel() {
                   Акции
                 </NavLink>
               </li> */}
-              <li>
+              <li className="header__links_item">
                 <NavLink to="/" className="header__link">
                   Контакты
                 </NavLink>
               </li>
             </ul>
           </li>
-          <div className="header__links header__contacts">
-            <p className="header__contactsData">green31@mail.ru</p>
-            <p className="header__contactsData">8(999)123-45-67</p>
-          </div>
+          <li className="nav__contacts">
+            <a href="mailto: green31@mail.ru" className="nav__contactsData">green31@mail.ru</a>
+            <a href="tel: +79853134477" className="nav__contactsData">+7(985)-313-44-77</a>
+          </li>
           {/* <li>
             <ul className="header__links">
               <li>

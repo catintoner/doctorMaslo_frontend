@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: flex-start;
   color: #666666;
+  padding-bottom: 50px;
 }
 
 .productsBlock__title {
@@ -22,6 +23,7 @@
 .productsBlock__subtitle {
   margin: 0 0 25px;
   padding: 0;
+  font-size: 18px;
 }
 
 .productsBlock__container {
@@ -32,4 +34,25 @@
   /* grid-column-gap: 24px;
   grid-row-gap: 37px; */
   gap: 25px;
+}
+
+.main__aboutUs {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.aboutUs__title {
+  color: #666666;
+  font-size: 32px;
+  margin: 0 0 25px;
+  padding: 25px 0 0;
+}
+
+.title__general {
+  margin: 0 2%;
+  padding: 0;
+  color: #888;
 }
