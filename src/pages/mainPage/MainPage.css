@@ -56,3 +56,15 @@
   padding: 0;
   color: #888;
 }
+
+
+.main__contacts {
+  background-image: url('../../images/header__background.png');
+  background-color: white;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #666666;
+}

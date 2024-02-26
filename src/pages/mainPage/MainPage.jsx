@@ -1,4 +1,5 @@
 import React from "react";
+import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 import "./MainPage.css";
 
@@ -7,12 +8,19 @@ import Card from "../../components/Card/Card";
 
 import mainHeaderImage from "../../images/header__,mainImage.jpg";
 
+const API_KEY = "29429d25-8534-41c8-84fd-0c7d1fc06876";
+
+
+
 function MainPage() {
+  const ymaps = React.useRef(null);
+
+  const [coords, setCoords] = React.useState([56.316195, 38.135964]);
   return (
     <>
       <header>
         <NavPanel />
-        <img className="header__mainImage" src={mainHeaderImage} alt="Девушка облакачивается на плакат с марками автохимии"/>
+        <img className="header__mainImage" src={mainHeaderImage} alt="Девушка облакачивается на плакат с марками автохимии" />
       </header>
       <main>
         <section className="main__productsBlock">
@@ -29,9 +37,9 @@ function MainPage() {
         <section className="main__aboutUs">
           <h2 className="aboutUs__title">О нас</h2>
           <p className="title__general">Doctor Maslo начала свою работу в 1995 году,
-             успешно работает на рынке смазочных материалов и автозапчастей.
-              В настоящее время основными направлениями деятельности компании являются розничная и
-              оптовая торговля смазочными материалами, автохимией, спецжидкостями, инструментами а также автопренадлеженостями.
+            успешно работает на рынке смазочных материалов и автозапчастей.
+            В настоящее время основными направлениями деятельности компании являются розничная и
+            оптовая торговля смазочными материалами, автохимией, спецжидкостями, инструментами а также автопренадлеженостями.
           </p>
           <h3>
             Наши преимущества
@@ -56,8 +64,54 @@ function MainPage() {
             <li>Мы профессионально найдем интересующий Вас продукт на рынке по оптимальной для Вас цене.</li>
           </ul>
         </section>
+        <section className="main__contacts">
+          <h2 className="contacts__title">
+            Контакты
+          </h2>
+          <button
+          onClick={() => console.log(coords)}>
+            test
+          </button>
+          <YMaps
+            query={{
+              apikey: API_KEY
+            }}
+          >
+          <button
+          onClick={(event) => {
+            console.log("im here");
+            setCoords([55.405798, 38.230407]);
+          }}>
+            test
+          </button>
+            <Map
+              defaultState={{
+                center: coords,
+                zoom: 10,
+                controls: ["zoomControl", "fullscreenControl"],
+              }}
+              modules={["control.ZoomControl", "control.FullscreenControl"]}
+              width="600px"
+              height="450px"
+            >
+              <Placemark
+                defaultGeometry={coords}
+                options={{
+                  iconImageSize: [10, 10],
+                  draggable: false,
+                  preset: "islands#greenDotIcon",
+                  hideIconOnBalloonOpen: false,
+                  openEmptyHint: true
+                }}
+                properties={{
+                  hintContent: "Бронницы"
+                }}
+              />
+            </Map>
+          </YMaps>
+        </section>
 
-      </main>
+      </main >
       {/* <Header /> */}
     </>
   );
