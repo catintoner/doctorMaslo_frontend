@@ -1,5 +1,5 @@
-import React from "react";
-import { YMaps, Map, Placemark } from "react-yandex-maps";
+import React, { useEffect, useState } from "react";
+
 
 import "./MainPage.css";
 
@@ -8,14 +8,20 @@ import Card from "../../components/Card/Card";
 
 import mainHeaderImage from "../../images/header__,mainImage.jpg";
 
-const API_KEY = "29429d25-8534-41c8-84fd-0c7d1fc06876";
-
+import YandexMaps from "../../components/YandexMaps/YandexMaps";
 
 
 function MainPage() {
-  const ymaps = React.useRef(null);
 
-  const [coords, setCoords] = React.useState([56.316195, 38.135964]);
+//  const configsForMaps = [
+
+
+//  ]
+
+//  const [props, setProps] = useState(0);
+
+
+
   return (
     <>
       <header>
@@ -68,47 +74,22 @@ function MainPage() {
           <h2 className="contacts__title">
             Контакты
           </h2>
-          <button
-          onClick={() => console.log(coords)}>
-            test
-          </button>
-          <YMaps
-            query={{
-              apikey: API_KEY
-            }}
-          >
-          <button
-          onClick={(event) => {
-            console.log("im here");
-            setCoords([55.405798, 38.230407]);
-          }}>
-            test
-          </button>
-            <Map
-              defaultState={{
-                center: coords,
-                zoom: 10,
-                controls: ["zoomControl", "fullscreenControl"],
-              }}
-              modules={["control.ZoomControl", "control.FullscreenControl"]}
-              width="600px"
-              height="450px"
-            >
-              <Placemark
-                defaultGeometry={coords}
-                options={{
-                  iconImageSize: [10, 10],
-                  draggable: false,
-                  preset: "islands#greenDotIcon",
-                  hideIconOnBalloonOpen: false,
-                  openEmptyHint: true
-                }}
-                properties={{
-                  hintContent: "Бронницы"
-                }}
-              />
-            </Map>
-          </YMaps>
+          <div className="maps__container">
+            <YandexMaps />
+          <div>
+            <ul>
+              <li
+                // onClick={() => {setProps(1)}}
+              >Магазин 1</li>
+              <li>Магазин 2</li>
+              <li>Магазин 3</li>
+            </ul>
+          </div>
+          </div>
+
+        </section>
+        <section>
+
         </section>
 
       </main >
