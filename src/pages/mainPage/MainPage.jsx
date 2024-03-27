@@ -9,17 +9,42 @@ import Card from "../../components/Card/Card";
 import mainHeaderImage from "../../images/header__,mainImage.jpg";
 
 import YandexMaps from "../../components/YandexMaps/YandexMaps";
+import ShopDescription from "../../components/ShopDescription/ShopDescription";
 
 
 function MainPage() {
 
-//  const configsForMaps = [
+  const [shopAddresses, setShopAddresses] = useState({
+    email: "green31@mail.ru",
+    phone: "+79853134477",
+    addresses: [
+      {
+        title: "г. Бронницы",
+        address: "г. Бронницы, Каширское шоссе, дом 2, стр. 1",
+        defaultCoords: [55.40579813557273, 38.23040946378777],
+        defaultZoom: 15
+      },
+      {
+        title: "МКАД, 23 км",
+        address: "МКАД, 23 км, внешняя сторона",
+        defaultCoords: [55.595379343561476, 37.7407942909489],
+        defaultZoom: 15
+      },
+      {
+        title: "МКАД, 31 км",
+        address: "МКАД, 31 км, внешняя сторона",
+        defaultCoords: [55.57341945360211, 37.63489855848088],
+        defaultZoom: 15
+      }
+    ]
+  });
 
+  const [mapsParams, setMapsParams] = useState({
+    defaultCoords: [55.486807, 37.980249],
+    defaultZoom: 9
+  });
 
-//  ]
-
-//  const [props, setProps] = useState(0);
-
+  const [mapsMethods, setMapsMethods] = useState({});
 
 
   return (
@@ -75,16 +100,30 @@ function MainPage() {
             Контакты
           </h2>
           <div className="maps__container">
-            <YandexMaps />
-          <div>
-            <ul>
-              <li
-                // onClick={() => {setProps(1)}}
-              >Магазин 1</li>
-              <li>Магазин 2</li>
-              <li>Магазин 3</li>
+            <YandexMaps
+              defaultCoords={mapsParams.defaultCoords}
+              defaultZoom={mapsParams.defaultZoom}
+              setMapsParams={setMapsParams}
+              setMapsMethods={setMapsMethods}
+              shopAddresses={shopAddresses}
+            />
+            <ul className="maps__shopList">
+              {shopAddresses.addresses.map((shop) => {
+                return (
+                  <ShopDescription
+                    key={shop.title}
+                    title={shop.title}
+                    address={shop.address}
+                    email={shopAddresses.email}
+                    phone={shopAddresses.phone}
+                    mapsParams={mapsParams}
+                    coords={shop.defaultCoords}
+                    zoom={shop.defaultZoom}
+                    mapsMethods={mapsMethods}
+                  />
+                )
+              })}
             </ul>
-          </div>
           </div>
 
         </section>

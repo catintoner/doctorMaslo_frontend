@@ -2,16 +2,29 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: #f7f7f7;
-  padding: 25px;
   border-radius: 5px;
   box-shadow: inset 0 0 5px;
+  height:fit-content;
+  padding: 2%;
+  margin: 0 2%;
+  width: 92%;
 }
 
 .yandexMap {
-  width: 600px;
+  width: 100%;
   height: 450px;
+  border-radius: 5px;
+  box-shadow: 1px -1px 16px 2px;
 }
 
-.yandexMap_hidden {
-  display: hidden !important;
+.maps__shopList {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
+

@@ -1,45 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-import { YMaps, Map, Placemark } from "react-yandex-maps";
+import { YMaps, Map, Placemark, ZoomControl } from "react-yandex-maps";
 
 import "./YandexMaps.css";
 
 const API_KEY = "29429d25-8534-41c8-84fd-0c7d1fc06876";
 
-function YandexMaps() {
-  // 55.486807, 37.980249
-
-  const configsForMaps = [
-    {
-      key: 1,
-      defaultCoords: [55.405798, 38.230407],
-      defaultZoom: 10
-    },
-    {
-      key: 2,
-      defaultCoords: [55.40579813557273, 38.23040946378777],
-      defaultZoom: 10
-    },
-    {
-      key: 3,
-      defaultCoords: [55.486807, 37.980249],
-      defaultZoom: 10
-    },
-
-  ]
-
-  const [props, setProps] = useState({
-    key: 0,
-    defaultCoords: [55.486807, 37.980249],
-    defaultZoom: 9
-  });
-
-  const [key, setKey] = useState(0);
-
-  function buttonCLick() {
-    setKey(1);
-    setProps(configsForMaps[1])
+function YandexMaps(
+  {
+    defaultCoords,
+    defaultZoom,
+    setMapsMethods,
+    shopAddresses
   }
+) {
+
+  function handleBalloonClick(evt, zoom, coords) {
+      evt.originalEvent.map.setZoom(zoom);
+      evt.originalEvent.map.setCenter(coords);
+  }
+
+  const ourContactsForBalloon = `Телефон: ${shopAddresses.phone}, Email: ${shopAddresses.email}`
 
   return (
     <YMaps
@@ -47,83 +28,51 @@ function YandexMaps() {
         apikey: API_KEY
       }}
     >
-      <button
-        onClick={() => buttonCLick()}
-      ></button>
+
       <Map
         className="yandexMap"
         state={{
-          center: props.defaultCoords,
-          zoom: props.defaultZoom,
-          controls: ["zoomControl", "fullscreenControl"],
+          center: defaultCoords,
+          zoom: defaultZoom,
+          controls: [
+            "zoomControl",
+            "fullscreenControl"],
         }}
-        modules={["control.ZoomControl", "control.FullscreenControl"]}
+        modules={[
+          "control.ZoomControl",
+          "control.FullscreenControl"]}
+        instanceRef={(ref) => setMapsMethods(ref)}
       >
-        <Placemark
-          defaultGeometry={[55.595379343561476, 37.7407942909489]}
-          options={{
-            iconImageSize: [10, 10],
-            draggable: false,
-            preset: "islands#greenDotIcon",
-            hideIconOnBalloonOpen: false,
-            openEmptyHint: true
-          }}
-          properties={{
-            hintContent: "МКАД, 23км"
-          }}
-        />
-        <Placemark
-          defaultGeometry={[55.57341945360211, 37.63489855848088]}
-          options={{
-            iconImageSize: [10, 10],
-            draggable: false,
-            preset: "islands#greenDotIcon",
-            hideIconOnBalloonOpen: false,
-            openEmptyHint: true
-          }}
-          properties={{
-            hintContent: "МКАД, 31 км"
-          }}
-        />
-        <Placemark
-          defaultGeometry={[55.40579813557273, 38.23040946378777]}
-          options={{
-            iconImageSize: [10, 10],
-            draggable: false,
-            preset: "islands#greenDotIcon",
-            hideIconOnBalloonOpen: false,
-            openEmptyHint: true
-          }}
-          properties={{
-            hintContent: "г. Броннинцы"
-          }}
-        />
+        {shopAddresses.addresses.map((shop) => {
+          return (
+            <Placemark
+              modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
+              key={shop.title}
+              defaultGeometry={shop.defaultCoords}
+              title={shop.title}
+              address={shop.address}
+              zoom={shop.defaultZoom}
+              options={{
+                iconImageSize: [10, 10],
+                draggable: false,
+                preset: "islands#greenDotIcon",
+                hideIconOnBalloonOpen: false,
+                hasHint: true,
+                hasBalloon: true,
+                openBalloonOnClick: true,
+                balloonPanelMaxMapArea: Infinity
+              }}
+              properties={{
+                hintContent: shop.title,
+                balloonContentHeader: shop.title,
+                balloonContentBody: shop.address,
+                balloonContentFooter: ourContactsForBalloon
+              }}
+              onCLick={(evt) => handleBalloonClick(evt, shop.defaultZoom, shop.defaultCoords)}
+            />
+          )
+        })}
       </Map>
-      {/* <Map
-        className="yandexMap yandexMap_hidden"
-        defaultState={{
-          center: [55.405798, 38.230407],
-          zoom: 10,
-          controls: ["zoomControl", "fullscreenControl"],
-        }}
-        modules={["control.ZoomControl", "control.FullscreenControl"]}
-        width="600px"
-        height="450px"
-      >
-        <Placemark
-          defaultGeometry={[55.405798, 38.230407]}
-          options={{
-            iconImageSize: [10, 10],
-            draggable: false,
-            preset: "islands#greenDotIcon",
-            hideIconOnBalloonOpen: false,
-            openEmptyHint: true
-          }}
-          properties={{
-            hintContent: "Бронницы"
-          }}
-        />
-      </Map> */}
     </YMaps>
   );
 }
