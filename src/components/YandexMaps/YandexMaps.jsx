@@ -46,7 +46,7 @@ function YandexMaps(
         {shopAddresses.addresses.map((shop) => {
           return (
             <Placemark
-              modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
+              modules={["geoObject.addon.balloon"]}
               key={shop.title}
               defaultGeometry={shop.defaultCoords}
               title={shop.title}
@@ -57,13 +57,12 @@ function YandexMaps(
                 draggable: false,
                 preset: "islands#greenDotIcon",
                 hideIconOnBalloonOpen: false,
-                hasHint: true,
                 hasBalloon: true,
                 openBalloonOnClick: true,
-                balloonPanelMaxMapArea: Infinity
+                balloonPanelMaxMapArea: Infinity,
               }}
               properties={{
-                hintContent: shop.title,
+                iconCaption: shop.title,
                 balloonContentHeader: shop.title,
                 balloonContentBody: shop.address,
                 balloonContentFooter: ourContactsForBalloon

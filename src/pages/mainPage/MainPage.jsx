@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 
 import "./MainPage.css";
 
 import NavPanel from "../../components/NavPanel/NavPanel";
 import Card from "../../components/Card/Card";
+import Footer from "../../components/Footer/Footer";
 
 import mainHeaderImage from "../../images/header__,mainImage.jpg";
 
@@ -127,12 +128,10 @@ function MainPage() {
           </div>
 
         </section>
-        <section>
-
-        </section>
-
       </main >
-      {/* <Header /> */}
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
