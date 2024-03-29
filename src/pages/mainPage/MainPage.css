@@ -36,25 +36,39 @@
 
 .main__aboutUs {
   background-color: #f7f7f7;
+  color: #666666;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  padding: 0 0 25px;
 }
 
 .aboutUs__title {
-  color: #666666;
   font-size: 32px;
   margin: 0 0 25px;
   padding: 25px 0 0;
+  align-self: center;
 }
 
 .title__general {
-  margin: 0 2%;
+  margin: 0 2% 25px;
   padding: 0;
-  color: #888;
 }
 
+.aboutUs__titles {
+  margin: 0 0 25px;
+  padding: 0;
+  align-self: center;
+}
+
+.aboutUs__list {
+  margin: 0 0 25px;
+}
+
+.aboutUs__list:last-child {
+  margin: 0;
+}
 
 .main__contacts {
   background-image: url('../../images/header__background.png');
@@ -71,4 +85,5 @@
 .contacts__title {
   margin: 0 0 20px;
   padding: 20px 0 0;
+  font-size: 32px;
 }

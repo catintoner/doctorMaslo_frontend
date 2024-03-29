@@ -3,17 +3,88 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 0 2%;
+  color: #666666;
+}
+
+.footer__infoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__title {
+  margin: 0 0 10px;
+  padding: 10px 0 0;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__footerContacts {
+
+}
+
+.footerContacts__title {
+  margin: 0 0 10px;
+}
+
+.footerContacts__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerContacts__item {
+  margin: 0 0 5px;
+}
+
+.footerContacts__githubLogo {
+  width: 20px;
+  height: 20px;
+  opacity: .6;
+}
+
+.footerContacts__githubTitle {
+
+}
+
+.footerContact__link {
+  text-decoration: none;
+  color: #666666;
+}
+
+.footerContact__link:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer__requisites {
+
+}
+
+.requisites__title {
+  margin: 0 0 10px;
+}
+
+.requisites__subtitle {
+  margin: 0 0 5px;
+}
+
+.requisites__innKpp {
+  margin: 0 0 5px;
+}
+
+.requisites__address {
+  margin: 0;
 }
 
 .footer__logo {
   max-width: 300px;
 }
 
-.footer__info {
-
-}
-
-.footer__title {
-  margin: 0;
-}

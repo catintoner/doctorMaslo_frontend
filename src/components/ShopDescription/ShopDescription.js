@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 
 import "./ShopDescription.css";
+
+import { defaultParamsForMap } from "../../constants/constants";
 
 function ShopDescription({
   title,
   address,
   email,
   phone,
-  mapsParams,
   coords,
   zoom,
   mapsMethods
@@ -18,10 +18,15 @@ function ShopDescription({
 
     const zoomNow = mapsMethods.getZoom();
     const centerNow = mapsMethods.getCenter();
+    const balloon = mapsMethods.balloon;
+
+    if (balloon.isOpen()) {
+      balloon.close();
+    }
 
     if (zoomNow === zoom && centerNow[0].toFixed(6) === coords[0].toFixed(6) && centerNow[1].toFixed(6) === coords[1].toFixed(6)) {
-      mapsMethods.setZoom(mapsParams.defaultZoom);
-      mapsMethods.setCenter(mapsParams.defaultCoords);
+      mapsMethods.setZoom(defaultParamsForMap.defaultZoom);
+      mapsMethods.setCenter(defaultParamsForMap.defaultCoords);
     } else {
       mapsMethods.setZoom(zoom);
       mapsMethods.setCenter(coords);

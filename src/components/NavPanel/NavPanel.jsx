@@ -1,7 +1,7 @@
 import React from "react";
 
 import './NavPanel.css';
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import headerLogo from "../../images/header__logoGreenLight.svg";
 
@@ -18,14 +18,14 @@ function NavPanel() {
           <li className="nav__links">
             <ul className="header__links navigation__bar">
               <li className="header__links_item">
-                <NavLink to="/" className="header__link">
+                <a href="#ourProducts" className="header__link">
                   Главная
-                </NavLink>
+                </a>
               </li>
               <li className="header__links_item">
-                <NavLink to="/" className="header__link">
+                <a href="#aboutUs" className="header__link">
                   О нас
-                </NavLink>
+                </a>
               </li>
               {/* <li>
                 <NavLink to="/" className="header__link">
@@ -33,9 +33,9 @@ function NavPanel() {
                 </NavLink>
               </li> */}
               <li className="header__links_item">
-                <NavLink to="/" className="header__link">
+                <a href="#ourContacts" className="header__link">
                   Контакты
-                </NavLink>
+                </a>
               </li>
             </ul>
           </li>

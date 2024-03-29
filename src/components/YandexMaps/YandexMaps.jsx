@@ -1,26 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
-import { YMaps, Map, Placemark, ZoomControl } from "react-yandex-maps";
+import { YMaps, Map, Placemark } from "react-yandex-maps";
+
+import { API_KEY, defaultParamsForMap } from "../../constants/constants";
 
 import "./YandexMaps.css";
 
-const API_KEY = "29429d25-8534-41c8-84fd-0c7d1fc06876";
+
 
 function YandexMaps(
   {
-    defaultCoords,
-    defaultZoom,
     setMapsMethods,
-    shopAddresses
+    shopsInfo
   }
 ) {
 
   function handleBalloonClick(evt, zoom, coords) {
-      evt.originalEvent.map.setZoom(zoom);
-      evt.originalEvent.map.setCenter(coords);
+    evt.originalEvent.map.setZoom(zoom);
+    evt.originalEvent.map.setCenter(coords);
   }
 
-  const ourContactsForBalloon = `Телефон: ${shopAddresses.phone}, Email: ${shopAddresses.email}`
+  const ourContactsForBalloon = `Телефон: ${shopsInfo.phone}, Email: ${shopsInfo.email}`
 
   return (
     <YMaps
@@ -32,8 +32,8 @@ function YandexMaps(
       <Map
         className="yandexMap"
         state={{
-          center: defaultCoords,
-          zoom: defaultZoom,
+          center: defaultParamsForMap.defaultCoords,
+          zoom: defaultParamsForMap.defaultZoom,
           controls: [
             "zoomControl",
             "fullscreenControl"],
@@ -43,7 +43,7 @@ function YandexMaps(
           "control.FullscreenControl"]}
         instanceRef={(ref) => setMapsMethods(ref)}
       >
-        {shopAddresses.addresses.map((shop) => {
+        {shopsInfo.addresses.map((shop) => {
           return (
             <Placemark
               modules={["geoObject.addon.balloon"]}
