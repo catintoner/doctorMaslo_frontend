@@ -12,17 +12,17 @@ function Footer() {
     <div className="footer">
       <section className="footer__infoBlock">
         <h4 className="footer__title">
-          Все права на ТМ “Doctor MASLO” принадлежат ООО “ОЙЛТРАК”
+          Все права на ТМ “Doctor MASLO” принадлежат ООО “ГРИНОЙЛ”
         </h4>
         <div className="infoBlock">
           <section className="footer__contacts">
             <h5 className="footerContacts__title">Контакты:</h5>
             <ul className="footerContacts__list">
               <li className="footerContacts__item">
-                <a href="mailto: green31@mail.ru" className="footerContact__link">Email: green31@mail.ru</a>
+                <a href="mailto: grlait23@mail.ru" className="footerContact__link">Email: grlait23@mail.ru</a>
               </li>
               <li className="footerContacts__item">
-                <a href="tel: +79853134477" className="footerContact__link">Тел./факс: +7(916) 022-99-33, +7(985)-313-44-77</a>
+                <a href="tel: +79853134477" className="footerContact__link">Телефон: +7(985)-313-44-77</a>
               </li>
               <li className="footerContacts__item">
                 <a href="https://github.com/catintoner" className="footerContact__link">
@@ -34,9 +34,9 @@ function Footer() {
           </section>
           <section className="footer__requisites">
             <h5 className="requisites__title">Реквизиты:</h5>
-            <p className="requisites__subtitle">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ОЙЛТРАК"</p>
-            <p className="requisites__innKpp">ИНН/КПП 5003112223 / 500301001</p>
-            <p className="requisites__address">Юридический адрес: 142717, Московская область, Ленинский район, поселок Развилка, километр МКАД 23, владение 15 строение 1, офис 10</p>
+            <p className="requisites__subtitle">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ГРИНОЙЛ"</p>
+            <p className="requisites__innKpp">ИНН/КПП 9729165984 / 772901001</p>
+            <p className="requisites__address">Юридический адрес: 119602, г. Москва, ул. Никулинская, д. 27, корпус 3, кв. 165</p>
           </section>
         </div>
       </section>

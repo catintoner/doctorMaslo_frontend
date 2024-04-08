@@ -18,7 +18,7 @@ import cardMotors from "../../images/card__motors.jpg";
 import cardDetails from "../../images/card__details.jpg";
 import cardFilters from "../../images/card__filters.jpg";
 import cardLubricants from "../../images/card__lubricants.jpg";
-
+import cardAcsess from "../../images/card__acsess.png";
 
 function MainPage() {
 
@@ -47,6 +47,11 @@ function MainPage() {
       title: "Смазки",
       description: "Смазки и присадки от ведущих фирм-производителей",
       picture: cardLubricants
+    },
+    {
+      title: "Акссесуары и инструменты",
+      description: "Автоакссесуары, наборы инструментов, туристическое оборудование",
+      picture: cardAcsess
     }
   ];
 
@@ -79,8 +84,7 @@ function MainPage() {
           <h2 id="aboutUs" className="aboutUs__title">О нас</h2>
           <p className="title__general">Doctor Maslo начала свою работу в 1995 году,
             успешно работает на рынке смазочных материалов и автозапчастей.
-            В настоящее время основными направлениями деятельности компании являются розничная и
-            оптовая торговля смазочными материалами, автохимией, спецжидкостями, инструментами а также автопренадлеженостями.
+            В настоящее время основными направлениями деятельности компании являются оптовая и розничная торговля смазочными материалами, автохимией, спецжидкостями, инструментами а также автопренадлеженостями.
           </p>
           <h3 className="aboutUs__titles">
             Наши преимущества
@@ -95,7 +99,7 @@ function MainPage() {
             Наш ассортимент
           </h3>
           <ul className="aboutUs__list">
-            <li>Наш прайс-лист содержит более 2 тыс наименований моторных масел, фильтров и других автомобильных жидкостей от 30 ведущих мировых и российских производителей в постоянном наличии на локальном складе.</li>
+            <li>Наш прайс-лист содержит более 4000 наименований моторных масел, фильтров и других автомобильных жидкостей от 30 ведущих мировых и российских производителей в постоянном наличии на локальном складе.</li>
           </ul>
           <h3 className="aboutUs__titles">Наше обслуживание</h3>
           <ul className="aboutUs__list">
@@ -118,11 +122,11 @@ function MainPage() {
               {shopsInfo.addresses.map((shop) => {
                 return (
                   <ShopDescription
-                    key={shop.title}
+                    key={shop.address}
                     title={shop.title}
                     address={shop.address}
                     email={shopsInfo.email}
-                    phone={shopsInfo.phone}
+                    phone={shop.phone}
                     coords={shop.defaultCoords}
                     zoom={shop.defaultZoom}
                     mapsMethods={mapsMethods}

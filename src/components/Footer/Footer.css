@@ -8,6 +8,10 @@
   color: #666666;
 }
 
+.footer__contacts {
+  margin: 0 20px 0 0;
+}
+
 .footer__infoBlock {
   display: flex;
   flex-direction: column;
@@ -56,6 +60,7 @@
 .footerContact__link {
   text-decoration: none;
   color: #666666;
+  width: max-content;
 }
 
 .footerContact__link:last-child {

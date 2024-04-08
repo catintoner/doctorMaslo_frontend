@@ -20,7 +20,7 @@ function YandexMaps(
     evt.originalEvent.map.setCenter(coords);
   }
 
-  const ourContactsForBalloon = `Телефон: ${shopsInfo.phone}, Email: ${shopsInfo.email}`
+  // const ourContactsForBalloon = `Телефон: ${shopsInfo}, Email: ${shopsInfo.email}`;
 
   return (
     <YMaps
@@ -47,7 +47,7 @@ function YandexMaps(
           return (
             <Placemark
               modules={["geoObject.addon.balloon"]}
-              key={shop.title}
+              key={shop.address}
               defaultGeometry={shop.defaultCoords}
               title={shop.title}
               address={shop.address}
@@ -65,7 +65,7 @@ function YandexMaps(
                 iconCaption: shop.title,
                 balloonContentHeader: shop.title,
                 balloonContentBody: shop.address,
-                balloonContentFooter: ourContactsForBalloon
+                balloonContentFooter: `Телефон: ${shop.phone}, Email: ${shopsInfo.email}`
               }}
               onCLick={(evt) => handleBalloonClick(evt, shop.defaultZoom, shop.defaultCoords)}
             />
