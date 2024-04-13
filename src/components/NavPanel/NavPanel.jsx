@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import headerLogo from "../../images/header__logoGreenLight.svg";
 import ContactsBar from "../ContactsBar/ContactsBar";
 
-function NavPanel() {
+function NavPanel({
+  getMuskForNumber
+}) {
 
   function getWindowSize() {
     const { innerWidth } = window;
@@ -26,10 +28,8 @@ function NavPanel() {
     }
 
     window.addEventListener("resize", handleWindowResize);
-    // window.screen.addEventListener("orientationchange", handleWindowResize);
     return () => {
       window.removeEventListener("resize", handleWindowResize);
-      // window.screen.removeEventListener("orientationchange", handleWindowResize);
     };
 
   }, [windowSize]);
@@ -66,11 +66,15 @@ function NavPanel() {
                   </ul>
                 </li>
                 <ContactsBar
-                  fontSizeCls="contacts__data_type_header" />
+                  fontSizeCls="contacts__data_type_header"
+                  getMuskForNumber={getMuskForNumber}
+                />
               </> :
               <>
                 <ContactsBar
-                  fontSizeCls="contacts__data_type_header"/>
+                  fontSizeCls="contacts__data_type_header"
+                  getMuskForNumber={getMuskForNumber}
+                />
                 <li className="burger__menu">
                   <input
                     className="nav__burger-menu"
@@ -106,6 +110,7 @@ function NavPanel() {
                     </li>
                     <ContactsBar
                       fontSizeCls="contacts__data_type_burger"
+                      getMuskForNumber={getMuskForNumber}
                     />
                   </ul>
                 </li>

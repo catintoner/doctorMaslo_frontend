@@ -8,7 +8,9 @@ import footerLogo from "../../images/header__logoGreenLight.svg";
 import footerGithubLogo from "../../images/footer__github.svg";
 import ContactsBar from "../ContactsBar/ContactsBar";
 
-function Footer() {
+function Footer({
+  getMuskForNumber
+}) {
   return (
     <div className="footer">
       <section className="footer__infoBlock">
@@ -21,6 +23,7 @@ function Footer() {
             <ul className="footerContacts__list">
               <ContactsBar
                 fontSizeCls="contactsData_type_footer"
+                getMuskForNumber={getMuskForNumber}
               />
               <li className="footerContacts__item">
                 <a href="https://github.com/catintoner" className="footerContact__link">

@@ -57,10 +57,16 @@ function MainPage() {
 
   const [mapsMethods, setMapsMethods] = useState({});
 
+  function getMuskForNumber(phone) {
+    return phone.replace(/^(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7($1)$2-$3-$4");
+  };
+
   return (
     <>
       <header>
-        <NavPanel />
+        <NavPanel
+          getMuskForNumber={getMuskForNumber}
+        />
         <img className="header__mainImage" src={mainHeaderImage} alt="Девушка облакачивается на плакат с марками автохимии" />
       </header>
       <main>
@@ -130,6 +136,7 @@ function MainPage() {
                     coords={shop.defaultCoords}
                     zoom={shop.defaultZoom}
                     mapsMethods={mapsMethods}
+                    getMuskForNumber={getMuskForNumber}
                   />
                 )
               })}
@@ -139,7 +146,9 @@ function MainPage() {
         </section>
       </main >
       <footer>
-        <Footer />
+        <Footer
+          getMuskForNumber={getMuskForNumber}
+        />
       </footer>
     </>
   );

@@ -11,7 +11,8 @@ function ShopDescription({
   phone,
   coords,
   zoom,
-  mapsMethods
+  mapsMethods,
+  getMuskForNumber
 }) {
 
   function handleAddressCLick() {
@@ -47,7 +48,7 @@ function ShopDescription({
         Адрес: {address}
       </p>
       <a href={`mailto: ${email}`} className="shop__contact">Email: {email}</a>
-      <a href={`tel: ${phone}`} className="shop__contact">Телефон: {phone}</a>
+      <a href={`tel: +7${phone}`} className="shop__contact">Телефон: {getMuskForNumber(phone)}</a>
     </li >
 
   );
