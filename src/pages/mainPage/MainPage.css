@@ -87,3 +87,50 @@
   padding: 20px 0 0;
   font-size: 32px;
 }
+
+@media screen and (max-width: 475px) {
+  .productsBlock__container {
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-template-rows: minmax(233px, 1fr);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .productsBlock__container {
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-rows: minmax(166px, 1fr);
+  }
+
+  .aboutUs__title {
+    margin-bottom: 15px;
+  }
+
+  .aboutUs__titles {
+    margin-bottom: 15px;
+  }
+
+  .title__general {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .aboutUs__list {
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .title__general {
+    font-size: 10px;
+    max-width: 80%;
+    align-self: center;
+  }
+
+  .aboutUs__list {
+    font-size: 10px;
+    max-width: 80%;
+  }
+}

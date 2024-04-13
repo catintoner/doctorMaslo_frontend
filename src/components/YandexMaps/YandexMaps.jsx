@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import { YMaps, Map, Placemark } from "react-yandex-maps";
 
@@ -19,8 +19,6 @@ function YandexMaps(
     evt.originalEvent.map.setZoom(zoom);
     evt.originalEvent.map.setCenter(coords);
   }
-
-  // const ourContactsForBalloon = `Телефон: ${shopsInfo}, Email: ${shopsInfo.email}`;
 
   return (
     <YMaps

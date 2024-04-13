@@ -11,7 +11,7 @@
 }
 
 .shopList__shop_isActive {
-  background-color:#666;
+  background-color: #666;
 }
 
 .shopList__shop:hover {
@@ -33,4 +33,18 @@
   text-decoration: none;
   color: #666;
   width: fit-content;
+}
+
+@media screen and (max-width:475px) {
+  .shop__title {
+    font-size: 14px;
+  }
+
+  .shop_address {
+    font-size: 14px;
+  }
+
+  .shop__contact {
+    font-size: 14px;
+  }
 }

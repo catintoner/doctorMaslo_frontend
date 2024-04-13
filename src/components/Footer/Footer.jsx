@@ -6,6 +6,7 @@ import "./Footer.css";
 
 import footerLogo from "../../images/header__logoGreenLight.svg";
 import footerGithubLogo from "../../images/footer__github.svg";
+import ContactsBar from "../ContactsBar/ContactsBar";
 
 function Footer() {
   return (
@@ -18,12 +19,9 @@ function Footer() {
           <section className="footer__contacts">
             <h5 className="footerContacts__title">Контакты:</h5>
             <ul className="footerContacts__list">
-              <li className="footerContacts__item">
-                <a href="mailto: grlait23@mail.ru" className="footerContact__link">Email: grlait23@mail.ru</a>
-              </li>
-              <li className="footerContacts__item">
-                <a href="tel: +79853134477" className="footerContact__link">Телефон: +7(985)-313-44-77</a>
-              </li>
+              <ContactsBar
+                fontSizeCls="contactsData_type_footer"
+              />
               <li className="footerContacts__item">
                 <a href="https://github.com/catintoner" className="footerContact__link">
                   <img src={footerGithubLogo} alt="Логотип сайта GitHub, контур котика в кружочке" className="footerContacts__githubLogo" />

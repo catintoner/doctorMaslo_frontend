@@ -17,8 +17,8 @@
   list-style-type: none;
 }
 
-.nav__logo {
-  flex-grow: 0;
+.nav__logo_type_burger {
+  margin: 0 0 30px;
 }
 
 .header__links {
@@ -31,6 +31,20 @@
 
 }
 
+.header__links_type_active {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header__links_type_active>.header__links_item {
+  margin: 0 0 20px;
+}
+
+.header__links_type_active>.contacts {
+  padding: 30px 0 0;
+}
+
+
 .header__links_item {
   margin-right: 20px;
 }
@@ -41,24 +55,6 @@
 
 .nav__links {
   flex-grow: 1;
-}
-
-.nav__contacts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  flex-grow: 0;
-}
-
-.nav__contactsData {
-  margin: 0;
-  padding: 0;
-  color: #666666;
-  font-size: 40px;
-  text-decoration: none;
 }
 
 .header__link {
@@ -74,6 +70,11 @@
 
 .nav__picture {
   margin: 0;
+  max-width: 300px;
+}
+
+.nav__logoBurger {
+  margin: 0 0 30px;
   max-width: 300px;
 }
 
@@ -96,7 +97,6 @@
 .burger__menu {
   display: flex;
   flex-direction: column;
-  margin-left: auto;
 }
 
 .nav__burger-label:hover {
@@ -107,15 +107,76 @@
   background-image: url('../../images/burger__close.svg');
 }
 
+.navigation__bar {
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  transition: visibility .3s, opacity .3s;
+  z-index: 1;
+  padding-top: 100px;
+}
 
-@media screen and (max-width:1279px) {
-  .nav__contactsData {
-    font-size: 30px;
-  }
+.navigation__bar:before {
+  display: block;
+  content: '';
+  background-color: rgba(0, 0, 0, .5);
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  position: fixed;
+}
+
+.user__navigation_type_active {
+  display: flex;
+  margin: 0 0 28px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1025px) {
   .nav__picture {
     max-width: 200px;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .nav__picture {
+    max-width: 170px;
+  }
+}
+
+
+@media screen and (max-width:475px) {
+  .nav__panel {
+    display: grid;
+    grid-template-areas:
+      "logo burger"
+      "contacts .";
+  }
+
+  .header__logo {
+    grid-area: logo;
+  }
+
+  .burger__menu {
+    grid-area: burger;
+  }
+
+  .navigation__bar {
+    width: 100%;
+  }
+
+  .navigation__bar:before {
+    width: 0;
   }
 }

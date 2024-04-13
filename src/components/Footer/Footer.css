@@ -29,9 +29,7 @@
   justify-content: space-between;
 }
 
-.footer__footerContacts {
-
-}
+.footer__footerContacts {}
 
 .footerContacts__title {
   margin: 0 0 10px;
@@ -53,9 +51,7 @@
   opacity: .6;
 }
 
-.footerContacts__githubTitle {
-
-}
+.footerContacts__githubTitle {}
 
 .footerContact__link {
   text-decoration: none;
@@ -69,9 +65,7 @@
   align-items: center;
 }
 
-.footer__requisites {
-
-}
+.footer__requisites {}
 
 .requisites__title {
   margin: 0 0 10px;
@@ -93,3 +87,36 @@
   max-width: 300px;
 }
 
+@media screen and (max-width: 1025px) {
+  .footer__logo {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer__infoBlock {
+    margin: 0 0 20px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .requisites__subtitle {
+    font-size: 10px;
+  }
+
+  .requisites__innKpp {
+    font-size: 10px;
+  }
+
+  .requisites__address {
+    font-size: 10px;
+  }
+
+  .footerContacts__githubTitle {
+    font-size: 10px;
+  }
+}
