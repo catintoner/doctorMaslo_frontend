@@ -7,7 +7,7 @@ import headerLogo from "../../images/header__logoGreenLight.svg";
 import ContactsBar from "../ContactsBar/ContactsBar";
 
 function NavPanel({
-  getMuskForNumber
+  getMaskForNumber
 }) {
 
   function getWindowSize() {
@@ -67,13 +67,13 @@ function NavPanel({
                 </li>
                 <ContactsBar
                   fontSizeCls="contacts__data_type_header"
-                  getMuskForNumber={getMuskForNumber}
+                  getMaskForNumber={getMaskForNumber}
                 />
               </> :
               <>
                 <ContactsBar
                   fontSizeCls="contacts__data_type_header"
-                  getMuskForNumber={getMuskForNumber}
+                  getMaskForNumber={getMaskForNumber}
                 />
                 <li className="burger__menu">
                   <input
@@ -110,7 +110,7 @@ function NavPanel({
                     </li>
                     <ContactsBar
                       fontSizeCls="contacts__data_type_burger"
-                      getMuskForNumber={getMuskForNumber}
+                      getMaskForNumber={getMaskForNumber}
                     />
                   </ul>
                 </li>

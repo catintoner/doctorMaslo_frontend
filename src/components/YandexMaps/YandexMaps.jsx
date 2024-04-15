@@ -11,7 +11,8 @@ import "./YandexMaps.css";
 function YandexMaps(
   {
     setMapsMethods,
-    shopsInfo
+    shopsInfo,
+    getMaskForNumber
   }
 ) {
 
@@ -23,7 +24,8 @@ function YandexMaps(
   return (
     <YMaps
       query={{
-        apikey: API_KEY
+        apikey: API_KEY,
+        mode: "debug"
       }}
     >
 
@@ -63,7 +65,7 @@ function YandexMaps(
                 iconCaption: shop.title,
                 balloonContentHeader: shop.title,
                 balloonContentBody: shop.address,
-                balloonContentFooter: `Телефон: ${shop.phone}, Email: ${shopsInfo.email}`
+                balloonContentFooter: `Телефон: ${getMaskForNumber(shop.phone)}, Email: ${shopsInfo.email}`
               }}
               onCLick={(evt) => handleBalloonClick(evt, shop.defaultZoom, shop.defaultCoords)}
             />

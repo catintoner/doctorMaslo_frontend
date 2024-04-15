@@ -57,7 +57,7 @@ function MainPage() {
 
   const [mapsMethods, setMapsMethods] = useState({});
 
-  function getMuskForNumber(phone) {
+  function getMaskForNumber(phone) {
     return phone.replace(/^(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7($1)$2-$3-$4");
   };
 
@@ -65,7 +65,7 @@ function MainPage() {
     <>
       <header>
         <NavPanel
-          getMuskForNumber={getMuskForNumber}
+          getMaskForNumber={getMaskForNumber}
         />
         <img className="header__mainImage" src={mainHeaderImage} alt="Девушка облакачивается на плакат с марками автохимии" />
       </header>
@@ -123,6 +123,7 @@ function MainPage() {
             <YandexMaps
               setMapsMethods={setMapsMethods}
               shopsInfo={shopsInfo}
+              getMaskForNumber={getMaskForNumber}
             />
             <ul className="maps__shopList">
               {shopsInfo.addresses.map((shop) => {
@@ -136,7 +137,7 @@ function MainPage() {
                     coords={shop.defaultCoords}
                     zoom={shop.defaultZoom}
                     mapsMethods={mapsMethods}
-                    getMuskForNumber={getMuskForNumber}
+                    getMaskForNumber={getMaskForNumber}
                   />
                 )
               })}
@@ -147,7 +148,7 @@ function MainPage() {
       </main >
       <footer>
         <Footer
-          getMuskForNumber={getMuskForNumber}
+          getMaskForNumber={getMaskForNumber}
         />
       </footer>
     </>
