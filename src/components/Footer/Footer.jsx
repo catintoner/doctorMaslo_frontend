@@ -35,9 +35,8 @@ function Footer({
           </section>
           <section className="footer__requisites">
             <h5 className="requisites__title">Реквизиты:</h5>
-            <p className="requisites__subtitle">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ГРИНОЙЛ"</p>
+            <p className="requisites__subtitle">Общество с ограниченной ответственностью "ГРИНОЙЛ"</p>
             <p className="requisites__innKpp">ИНН/КПП 9729165984 / 772901001</p>
-            <p className="requisites__address">Юридический адрес: 119602, г. Москва, ул. Никулинская, д. 27, корпус 3, кв. 165</p>
           </section>
         </div>
       </section>
