@@ -2,19 +2,19 @@
   font-family: 'M.Video';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/M.Video\ Regular.ttf) format('ttf');
+  src: url(../fonts/M.VideoRegular.ttf) format('ttf');
 }
 
 @font-face {
   font-family: 'M.Video';
   font-style: normal;
   font-weight: 700;
-  src: url(../fonts/M.Video\ Bold.ttf) format('ttf');
+  src: url(../fonts/M.VideoBold.ttf) format('ttf');
 }
 
 @font-face {
   font-family: 'M.Video';
   font-style: normal;
   font-weight: 100;
-  src: url(../fonts/M.Video\ Light.ttf) format('ttf');
+  src: url(../fonts/M.VideoLight.ttf) format('ttf');
 }
