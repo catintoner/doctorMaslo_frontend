@@ -25,9 +25,9 @@
 }
 
 .notFound__image {
-  margin-top: -150px;
+  margin-top: -120px;
   padding-left: 5%;
-  width: 800px;
+  min-width: 100px;
 }
 
 .notFound__textBlock {
@@ -54,8 +54,77 @@
   font-size: 40px;
   color: #888;
   transition: .2s;
+  cursor: pointer;
 }
 
 .notFound__backButton:hover {
   opacity: .8;
+}
+
+@media screen and (max-width:1279px) {
+  .notFound__image {
+    padding-left: 0;
+  }
+
+  .notFound__textBlock {
+    padding-top: 50px;
+  }
+
+  .notFound__description {
+    font-size: 40px;
+  }
+
+  .notFound__backButton {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 948px) {
+  .notFound__content {
+    flex-direction: column;
+  }
+
+  .notFound__image {
+    margin-top: 0;
+
+  }
+
+  .notFound__mainText {
+    text-align: center;
+    height: max-content;
+    margin-bottom: 20px;
+  }
+
+  .text__section {
+    padding: 0;
+  }
+
+  .notFound__textBlock {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .text__section {
+    font-size: 40px;
+  }
+
+  .notFound__description {
+    font-size: 30px;
+  }
+
+  .notFound__backButton {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .notFound__description {
+    font-size: 20px;
+  }
+
+  .notFound__backButton {
+    font-size: 15px;
+  }
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 
-import MainPage from '../pages/mainPage/MainPage';
-import PageNotFound from '../pages/pageNotFound/PageNotFound';
+import MainPage from "../pages/mainPage/MainPage";
+import PageNotFound from "../pages/pageNotFound/PageNotFound";
 
 function App() {
 
@@ -15,18 +15,27 @@ function App() {
     navigate(-1);
   }
 
+  function getMaskForNumber(phone) {
+    return phone.replace(/^(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7($1)$2-$3-$4");
+  };
+
   return (
-    <div className='page__container'>
+    <div className="page__container">
       <Routes>
-        <Route exact path='/'
+        <Route exact path="/"
           element={
-            <MainPage />
+            <MainPage
+              getMaskForNumber={getMaskForNumber}
+            />
           }
         />
 
-        <Route path='*'
+        <Route path="*"
           element={
-            <PageNotFound handleGoBack={handleGoBack} />
+            <PageNotFound
+              handleGoBack={handleGoBack}
+              getMaskForNumber={getMaskForNumber}
+            />
           }
         />
       </Routes>

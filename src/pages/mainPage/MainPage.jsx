@@ -20,7 +20,7 @@ import cardFilters from "../../images/card__filters.jpg";
 import cardLubricants from "../../images/card__lubricants.jpg";
 import cardAcsess from "../../images/card__acsess.png";
 
-function MainPage() {
+function MainPage({ getMaskForNumber }) {
 
   const photosArray = [
     {
@@ -56,10 +56,6 @@ function MainPage() {
   ];
 
   const [mapsMethods, setMapsMethods] = useState({});
-
-  function getMaskForNumber(phone) {
-    return phone.replace(/^(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7($1)$2-$3-$4");
-  };
 
   return (
     <>

@@ -3,13 +3,16 @@ import React from "react";
 import './PageNotFound.css';
 
 import NavPanel from "../../components/NavPanel/NavPanel";
+import Footer from "../../components/Footer/Footer";
 import backgroundImage from "../../images/pageNotFound__background_700.png";
 
 function PageNotFound(props) {
   return (
     <>
       <header>
-        <NavPanel />
+        <NavPanel
+         getMaskForNumber={props.getMaskForNumber}
+        />
       </header>
       <main>
         <section className="notFound__mainText">
@@ -27,7 +30,9 @@ function PageNotFound(props) {
         </figure>
       </main>
       <footer>
-
+      <Footer
+          getMaskForNumber={props.getMaskForNumber}
+        />
       </footer>
 
     </>

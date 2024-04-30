@@ -49,17 +49,17 @@ function NavPanel({
                 <li className="nav__links">
                   <ul className="header__links">
                     <li className="header__links_item">
-                      <a href="#ourProducts" className="header__link">
+                      <a href="/#ourProducts" className="header__link">
                         Главная
                       </a>
                     </li>
                     <li className="header__links_item">
-                      <a href="#aboutUs" className="header__link">
+                      <a href="/#aboutUs" className="header__link">
                         О нас
                       </a>
                     </li>
                     <li className="header__links_item">
-                      <a href="#ourContacts" className="header__link">
+                      <a href="/#ourContacts" className="header__link">
                         Контакты
                       </a>
                     </li>
@@ -94,17 +94,17 @@ function NavPanel({
                   <ul className={`header__links ${burgerChecked && "header__links_type_active"}`}>
 
                     <li className="header__links_item">
-                      <a href="#ourProducts" className="header__link" onClick={handleBurgerCheck}>
+                      <a href="/#ourProducts" className="header__link" onClick={handleBurgerCheck}>
                         Главная
                       </a>
                     </li>
                     <li className="header__links_item">
-                      <a href="#aboutUs" className="header__link" onClick={handleBurgerCheck}>
+                      <a href="/#aboutUs" className="header__link" onClick={handleBurgerCheck}>
                         О нас
                       </a>
                     </li>
                     <li className="header__links_item">
-                      <a href="#ourContacts" className="header__link" onClick={handleBurgerCheck}>
+                      <a href="/#ourContacts" className="header__link" onClick={handleBurgerCheck}>
                         Контакты
                       </a>
                     </li>
